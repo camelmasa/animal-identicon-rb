@@ -1,8 +1,10 @@
 # Animal::Identicon
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/animal/identicon`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby library for generation animal icons using SVG.
+It's like identicon but only 4096 patterns. (64 animals and 64 colors)
 
-TODO: Delete this and the text above, and describe your gem
+![](https://user-images.githubusercontent.com/189824/38244739-93b970e6-3776-11e8-8e8f-608faf59ac8b.png)
+
 
 ## Installation
 
@@ -22,7 +24,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require "animal-identicon"
+
+icon = Animal::Identicon.new("camelmasa")
+icon.to_svg(64)
+```
 
 ## Development
 
@@ -32,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'camlemasa'/animal-identicon.
+Bug reports and pull requests are welcome on GitHub at https://github.com/'camlemasa'/animal-identicon-rb.
 
 ## License
 

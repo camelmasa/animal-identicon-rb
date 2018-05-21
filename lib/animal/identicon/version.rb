@@ -1,5 +1,5 @@
 module Animal
-  module Identicon
+  class Identicon
     VERSION = "0.1.0"
   end
 end
