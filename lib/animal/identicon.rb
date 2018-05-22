@@ -3,16 +3,29 @@ require "animal/identicon/version"
 
 module Animal
   class Identicon
+    class TypeError < StandardError; end
+
     def initialize(identifier)
       @identifier = identifier
     end
 
-    def to_svg(size = 128)
+    def to_svg(size = 128, type: "square")
       digits = generate_digits
       icon   = generate_icon(digits)
       color  = generate_color(digits)
 
-      "<svg style='background-color: ##{color}; height: #{size}px; width: #{size}px'><image xlink:href='https://ssl.gstatic.com/docs/common/profile/#{icon}_lg.png' style='height: #{size}px; width: #{size}px'></image></svg>"
+      case type
+      when "circle"
+        radius = 50
+      when "square"
+        radius = 0
+      else
+        raise TypeError.new("Please pass type 'circle' or 'square'")
+      end
+
+      "<svg style='background-color: ##{color}; height: #{size}px; width: #{size}px; border-radius: #{radius}%;'>
+        <image xlink:href='https://ssl.gstatic.com/docs/common/profile/#{icon}_lg.png' style='height: #{size}px; width: #{size}px'></image>
+       </svg>"
     end
 
     private
