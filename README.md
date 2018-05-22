@@ -39,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'camlemasa'/animal-identicon-rb.
+Bug reports and pull requests are welcome on GitHub at https://github.com/camalmasa/animal-identicon-rb.
 
 ## License
 
